@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: dullandwitlesseshoponcontainers 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dullandwitlesseshoponcontainers
+  template:
+    metadata:
+      labels:
+        app: dullandwitlesseshoponcontainers 
+    spec:
+      containers:
+        - name: dullandwitlesseshoponcontainers 
+          image: testk8324registry.azurecr.io/dullandwitlesseshoponcontainers
+          ports:
+          - containerPort: 80
